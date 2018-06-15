@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models import F
 # Create your models here.
 
 class User(models.Model):
@@ -7,7 +7,7 @@ class User(models.Model):
     secret = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.name + " / " + self.secret
+        return self.name + " / " + str(self.secret)
 
 class Bucketlist(models.Model):
     name = models.CharField(max_length=255, blank=False, unique=True)
@@ -16,4 +16,4 @@ class Bucketlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{}".format(self.name)
+        return self.name

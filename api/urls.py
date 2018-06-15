@@ -6,7 +6,8 @@ from . import views
 urlpatterns = {
     url(r'^bucketlists/$', views.BucketlistList.as_view(), name="create"),
     url(r'^bucketlists/(?P<pk>[0-9]+)/$', views.BucketlistDetail.as_view(), name="details"),
-    url(r'/bucketlists/users/', views.UserList.as_view(), name="users"),
+    url(r'^bucketlists/users/$', views.UserList.as_view(), name="users"),
+    url(r'^bucketlists/users/(?P<pk>[0-9]+)/$', views.UserListDetail.as_view(), name="usersdetails"),
 }
 
 urlpatterns = format_suffix_patterns(urlpatterns)
