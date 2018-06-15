@@ -1,1 +1,1 @@
-"web: python yourfile.py" 
+web: gunicorn djangorest.wsgi
